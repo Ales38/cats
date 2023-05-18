@@ -1,0 +1,13 @@
+.alert-warning{
+    float: left;
+    clear:both;
+    wight:400px;
+    marning:20px;
+    text-align:center;
+}
+
+.post{
+    display: flex;
+    background: #7d2ae8;
+
+}
