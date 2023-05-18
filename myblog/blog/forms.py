@@ -24,5 +24,5 @@ class UserForm(forms.Form):
 class BlogForm(forms.ModelForm):
     class Meta:
       model =Post
-      fields = '__all__'
+      fields = ('title','discriptions')
 
