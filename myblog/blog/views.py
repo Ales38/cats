@@ -14,7 +14,7 @@ from django.views.generic import DetailView, CreateView
 class PostView(View):
     def get(self, request):
         posts = Post.objects.all()
-        return render(request, 'blog/blog.html', {'post_list': posts})
+        return render(request, 'blog/blog.html', {'posts': posts})
 
 
 class PostDetail(View):
@@ -85,6 +85,8 @@ def DelComment(request, pk):
     return render(request, 'blog/del.html', context)
 
 
+
+
 def index(request):
     task = Post.objects.all()
     form = BlogForm()
@@ -93,7 +95,6 @@ def index(request):
         if form.is_valid():
             form.save()
             return redirect('/')
-
     context = {'task': task, 'form': form}
     return render(request,'blog/index.html',context)
 

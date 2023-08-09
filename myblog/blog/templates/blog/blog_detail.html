@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="{% static '/blog/css/style.css' %}" type="text/css" media="all" />
 </head>
 <body>
-
+<div>
+<div>
 <div class="shell">
 	<div class="border">
 		<div id="navigation">
 			<ul>
-				<a href="/">Перейти на главную </a>
+				<a href="/">Перейти на главную</a>
 				<br>
 				<a href="/admin"> Админ.панель</a>
 			</ul>
@@ -22,30 +23,31 @@
 			<div id="content" class="left">
 				<div class="alert  alert-warning">
 					<h1>{{ post.title }}</h1>
-                      <p><img class="img-article-center-thumb" src="{{ post.image.url }}" width="40%"></p>
-					<div class="">{{ post.discriptions|linebreaks }}</div>
-					<p>Автор: {{ post.author }}</p>
-					<div class="cl">&nbsp;
-						</div>
-					</div>
 				</div>
+				<p><img class="img-article-center-thumb" src="{{ post.image.url }}" width="40%"></p>
+				<div class="">{{ post.discriptions|linebreaks }}</div>
+					<p>Автор: {{ post.author }}</p>
+				<div class="cl">&nbsp;
+				 </div>
+			</div>
+		</div>
 			</div>
 			<!--<div class="form-comment">
 				<h5>Нежный ваш комментарий можно ниже: </h5>-->
 				<div>
-					<form action="{% url 'add_comments' post.id  %}" method="post">
+					<form action="{% url 'add_comments' post.id %}" method="post">
 						{% csrf_token %}
 					<div>
-						 <label> Ваш нежный комментарий: </label><br>
+						 <label> Ваш  комментарий: </label><br>
 					   <textarea name="text_comments"></textarea>
 					 </div>
 						 <div>
-						  <label>Ваше нежное имя * </label>
+						  <label>Ваше имя * </label>
 							 <br>
 						  <input type="text" name="name">
 						</div>
 						<div>
-						<label>Ваш  нежный email:  </label><br>
+						<label>Ваш  email:  </label><br>
 						<input type="email" name="email">
 						</div>
 						<input type="submit">
@@ -68,8 +70,7 @@
 </div>
  {% for i in comments %}
  <p>{{ i.text_comments }}</p>
-<a href="{% url 'delete'  i.id %}">Удалить нежно</a>
+ <a href="{% url 'delete' i.id %}">Удалить </a>
  {% endfor %}
-
 </body>
 </html>

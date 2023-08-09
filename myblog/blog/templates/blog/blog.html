@@ -29,7 +29,11 @@
 				<!--<li class="share">-->
 				<a class="share-yt" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%88%D0%BA%D0%B8"><i>ссылка на Wikipedia</i></a>
 			</ul>
-			</div>
+<!--			</div>   def __str__(self):-->
+<!--      return f'{self.title},{self.author}'-->
+<!--   class Meta:-->
+<!--       verbose_name = 'Запись'-->
+<!--       verbose_name_plural = 'Записи'-->
 			{% if request.user.is_authenticated %}
 <h3> Добро пожаловать, {{request.user.username}}!!!!! </h3>
 			{% else %}
